@@ -1,5 +1,5 @@
 # nc-mac
-A simple malicious NetCat alternative for MacOS
+A simple NetCat alternative for MacOS
 
 ## On the listener's machine:
 
